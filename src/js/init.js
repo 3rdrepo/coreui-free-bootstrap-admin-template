@@ -200,9 +200,8 @@ function onchange(pre, curr) {
 $pm.bindPages(pages, onchange);
 $pm.select("page/dashboard.html");
 $pm.listenRouter(function (url) {
-    if (!!url.router) {
-        window.scrollTo(0, 0)
-    } else {
+    if (!url.router) {
         $pm.select("page/dashboard.html");
     }
+    window.scrollTo(0, 0)
 });
