@@ -182,96 +182,18 @@ let pages = [
             $pm.loadJS("js/widgets.js")
         },
     },
-
-    // pages
-    {
-        dst: "page/pages/login.html",
-        url: "page/pages/login.html",
-        lazy: true,
-        onshow: function () {
-            $pm.element("sidebar").style.display = "none";
-            $pm.element("header").style.display = "none";
-            $pm.element("footer").style.display = "none";
-        },
-        onhide: function () {
-            $pm.element("sidebar").style.display = "block";
-            $pm.element("header").style.display = "block";
-            $pm.element("footer").style.display = "block";
-        },
-    },
-    {
-        dst: "page/pages/register.html",
-        url: "page/pages/register.html",
-        lazy: true,
-        onshow: function () {
-            $pm.element("sidebar").style.display = "none";
-            $pm.element("header").style.display = "none";
-            $pm.element("footer").style.display = "none";
-        },
-        onhide: function () {
-            $pm.element("sidebar").style.display = "block";
-            $pm.element("header").style.display = "block";
-            $pm.element("footer").style.display = "block";
-        },
-    },
-    {
-        dst: "page/pages/404.html",
-        url: "page/pages/404.html",
-        lazy: true,
-        onshow: function () {
-            $pm.element("sidebar").style.display = "none";
-            $pm.element("header").style.display = "none";
-            $pm.element("footer").style.display = "none";
-        },
-        onhide: function () {
-            $pm.element("sidebar").style.display = "block";
-            $pm.element("header").style.display = "block";
-            $pm.element("footer").style.display = "block";
-        },
-    },
-    {
-        dst: "page/pages/500.html",
-        url: "page/pages/500.html",
-        lazy: true,
-        onshow: function () {
-            $pm.element("sidebar").style.display = "none";
-            $pm.element("header").style.display = "none";
-            $pm.element("footer").style.display = "none";
-        },
-        onhide: function () {
-            $pm.element("sidebar").style.display = "block";
-            $pm.element("header").style.display = "block";
-            $pm.element("footer").style.display = "block";
-        },
-    },
-
-    {
-        dst: "page/blank.html",
-        url: "page/blank.html",
-        lazy: true,
-        onshow: function () {
-            $pm.element("sidebar").style.display = "none";
-            $pm.element("header").style.display = "none";
-            $pm.element("footer").style.display = "none";
-        },
-        onhide: function () {
-            $pm.element("sidebar").style.display = "block";
-            $pm.element("header").style.display = "block";
-            $pm.element("footer").style.display = "block";
-        },
-    },
 ];
 
 function onchange(pre, curr) {
     if (pre) {
         let preElem = $pm.element(pre.dst.replace("html", "src"));
         if (preElem) {
-            preElem.className = "sidebar-item";
+            preElem.className = "c-sidebar-nav-item";
         }
     }
     let currElem = $pm.element(curr.dst.replace("html", "src"));
     if (currElem) {
-        currElem.className = "sidebar-item active";
+        currElem.className = "c-sidebar-nav-item-active";
     }
 }
 

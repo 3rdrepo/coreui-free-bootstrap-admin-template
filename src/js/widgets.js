@@ -9,41 +9,37 @@
 
 /* eslint-disable no-magic-numbers */
 // Disable the on-canvas tooltip
-Chart.defaults.global.pointHitDetectionRadius = 1
-Chart.defaults.global.tooltips.enabled = false
-Chart.defaults.global.tooltips.mode = 'index'
-Chart.defaults.global.tooltips.position = 'nearest'
-Chart.defaults.global.tooltips.custom = coreui.ChartJS.customTooltips
-
-document.body.addEventListener('classtoggle', event => {
+Chart.defaults.global.pointHitDetectionRadius = 1;
+Chart.defaults.global.tooltips.enabled = false;
+Chart.defaults.global.tooltips.mode = 'index';
+Chart.defaults.global.tooltips.position = 'nearest';
+Chart.defaults.global.tooltips.custom = coreui.ChartJS.customTooltips;
+document.body.addEventListener('classtoggle', function (event) {
   if (event.detail.className === 'c-dark-theme') {
     if (document.body.classList.contains('c-dark-theme')) {
-      cardChart1.data.datasets[0].pointBackgroundColor = coreui.Utils.getStyle('--primary-dark-theme')
-      cardChart2.data.datasets[0].pointBackgroundColor = coreui.Utils.getStyle('--info-dark-theme')
+      cardChart1.data.datasets[0].pointBackgroundColor = coreui.Utils.getStyle('--primary-dark-theme');
+      cardChart2.data.datasets[0].pointBackgroundColor = coreui.Utils.getStyle('--info-dark-theme');
     } else {
-      cardChart1.data.datasets[0].pointBackgroundColor = coreui.Utils.getStyle('--primary')
-      cardChart2.data.datasets[0].pointBackgroundColor = coreui.Utils.getStyle('--info')
+      cardChart1.data.datasets[0].pointBackgroundColor = coreui.Utils.getStyle('--primary');
+      cardChart2.data.datasets[0].pointBackgroundColor = coreui.Utils.getStyle('--info');
     }
 
-    cardChart1.update()
-    cardChart2.update()
+    cardChart1.update();
+    cardChart2.update();
   }
-})
+}); // eslint-disable-next-line no-unused-vars
 
-// eslint-disable-next-line no-unused-vars
-const cardChart1 = new Chart(document.getElementById('card-chart1'), {
+var cardChart1 = new Chart(document.getElementById('card-chart1'), {
   type: 'line',
   data: {
     labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
-    datasets: [
-      {
-        label: 'My First dataset',
-        backgroundColor: 'transparent',
-        borderColor: 'rgba(255,255,255,.55)',
-        pointBackgroundColor: coreui.Utils.getStyle('--primary'),
-        data: [65, 59, 84, 84, 51, 55, 40]
-      }
-    ]
+    datasets: [{
+      label: 'My First dataset',
+      backgroundColor: 'transparent',
+      borderColor: 'rgba(255,255,255,.55)',
+      pointBackgroundColor: coreui.Utils.getStyle('--primary'),
+      data: [65, 59, 84, 84, 51, 55, 40]
+    }]
   },
   options: {
     maintainAspectRatio: false,
@@ -81,22 +77,19 @@ const cardChart1 = new Chart(document.getElementById('card-chart1'), {
       }
     }
   }
-})
+}); // eslint-disable-next-line no-unused-vars
 
-// eslint-disable-next-line no-unused-vars
-const cardChart2 = new Chart(document.getElementById('card-chart2'), {
+var cardChart2 = new Chart(document.getElementById('card-chart2'), {
   type: 'line',
   data: {
     labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
-    datasets: [
-      {
-        label: 'My First dataset',
-        backgroundColor: 'transparent',
-        borderColor: 'rgba(255,255,255,.55)',
-        pointBackgroundColor: coreui.Utils.getStyle('--info'),
-        data: [1, 18, 9, 17, 34, 22, 11]
-      }
-    ]
+    datasets: [{
+      label: 'My First dataset',
+      backgroundColor: 'transparent',
+      borderColor: 'rgba(255,255,255,.55)',
+      pointBackgroundColor: coreui.Utils.getStyle('--info'),
+      data: [1, 18, 9, 17, 34, 22, 11]
+    }]
   },
   options: {
     maintainAspectRatio: false,
@@ -135,21 +128,18 @@ const cardChart2 = new Chart(document.getElementById('card-chart2'), {
       }
     }
   }
-})
+}); // eslint-disable-next-line no-unused-vars
 
-// eslint-disable-next-line no-unused-vars
-const cardChart3 = new Chart(document.getElementById('card-chart3'), {
+var cardChart3 = new Chart(document.getElementById('card-chart3'), {
   type: 'line',
   data: {
     labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
-    datasets: [
-      {
-        label: 'My First dataset',
-        backgroundColor: 'rgba(255,255,255,.2)',
-        borderColor: 'rgba(255,255,255,.55)',
-        data: [78, 81, 80, 45, 34, 12, 40]
-      }
-    ]
+    datasets: [{
+      label: 'My First dataset',
+      backgroundColor: 'rgba(255,255,255,.2)',
+      borderColor: 'rgba(255,255,255,.55)',
+      data: [78, 81, 80, 45, 34, 12, 40]
+    }]
   },
   options: {
     maintainAspectRatio: false,
@@ -175,22 +165,19 @@ const cardChart3 = new Chart(document.getElementById('card-chart3'), {
       }
     }
   }
-})
+}); // eslint-disable-next-line no-unused-vars
 
-// eslint-disable-next-line no-unused-vars
-const cardChart4 = new Chart(document.getElementById('card-chart4'), {
+var cardChart4 = new Chart(document.getElementById('card-chart4'), {
   type: 'bar',
   data: {
     labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December', 'January', 'February', 'March', 'April'],
-    datasets: [
-      {
-        label: 'My First dataset',
-        backgroundColor: 'rgba(255,255,255,.2)',
-        borderColor: 'rgba(255,255,255,.55)',
-        data: [78, 81, 80, 45, 34, 12, 40, 85, 65, 23, 12, 98, 34, 84, 67, 82],
-        barPercentage: 0.6
-      }
-    ]
+    datasets: [{
+      label: 'My First dataset',
+      backgroundColor: 'rgba(255,255,255,.2)',
+      borderColor: 'rgba(255,255,255,.55)',
+      data: [78, 81, 80, 45, 34, 12, 40, 85, 65, 23, 12, 98, 34, 84, 67, 82],
+      barPercentage: 0.6
+    }]
   },
   options: {
     maintainAspectRatio: false,
@@ -206,24 +193,23 @@ const cardChart4 = new Chart(document.getElementById('card-chart4'), {
       }]
     }
   }
-})
+}); // Random Numbers
 
-// Random Numbers
-const random = (min, max) => Math.floor(Math.random() * (max - min + 1) + min)
+var random = function random(min, max) {
+  return Math.floor(Math.random() * (max - min + 1) + min);
+}; // eslint-disable-next-line no-unused-vars
 
-// eslint-disable-next-line no-unused-vars
-const sparklineChart1 = new Chart(document.getElementById('sparkline-chart-1'), {
+
+var sparklineChart1 = new Chart(document.getElementById('sparkline-chart-1'), {
   type: 'bar',
   data: {
     labels: ['M', 'T', 'W', 'T', 'F', 'S', 'S', 'M', 'T', 'W', 'T', 'F', 'S', 'S', 'M'],
-    datasets: [
-      {
-        backgroundColor: coreui.Utils.getStyle('--primary'),
-        borderColor: 'transparent',
-        borderWidth: 1,
-        data: [random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100)]
-      }
-    ]
+    datasets: [{
+      backgroundColor: coreui.Utils.getStyle('--primary'),
+      borderColor: 'transparent',
+      borderWidth: 1,
+      data: [random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100)]
+    }]
   },
   options: {
     maintainAspectRatio: false,
@@ -239,21 +225,18 @@ const sparklineChart1 = new Chart(document.getElementById('sparkline-chart-1'), 
       }]
     }
   }
-})
+}); // eslint-disable-next-line no-unused-vars
 
-// eslint-disable-next-line no-unused-vars
-const sparklineChart2 = new Chart(document.getElementById('sparkline-chart-2'), {
+var sparklineChart2 = new Chart(document.getElementById('sparkline-chart-2'), {
   type: 'bar',
   data: {
     labels: ['M', 'T', 'W', 'T', 'F', 'S', 'S', 'M', 'T', 'W', 'T', 'F', 'S', 'S', 'M'],
-    datasets: [
-      {
-        backgroundColor: coreui.Utils.getStyle('--warning'),
-        borderColor: 'transparent',
-        borderWidth: 1,
-        data: [random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100)]
-      }
-    ]
+    datasets: [{
+      backgroundColor: coreui.Utils.getStyle('--warning'),
+      borderColor: 'transparent',
+      borderWidth: 1,
+      data: [random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100)]
+    }]
   },
   options: {
     maintainAspectRatio: false,
@@ -269,21 +252,18 @@ const sparklineChart2 = new Chart(document.getElementById('sparkline-chart-2'), 
       }]
     }
   }
-})
+}); // eslint-disable-next-line no-unused-vars
 
-// eslint-disable-next-line no-unused-vars
-const sparklineChart3 = new Chart(document.getElementById('sparkline-chart-3'), {
+var sparklineChart3 = new Chart(document.getElementById('sparkline-chart-3'), {
   type: 'bar',
   data: {
     labels: ['M', 'T', 'W', 'T', 'F', 'S', 'S', 'M', 'T', 'W', 'T', 'F', 'S', 'S', 'M'],
-    datasets: [
-      {
-        backgroundColor: coreui.Utils.getStyle('--success'),
-        borderColor: 'transparent',
-        borderWidth: 1,
-        data: [random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100)]
-      }
-    ]
+    datasets: [{
+      backgroundColor: coreui.Utils.getStyle('--success'),
+      borderColor: 'transparent',
+      borderWidth: 1,
+      data: [random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100)]
+    }]
   },
   options: {
     maintainAspectRatio: false,
@@ -299,21 +279,18 @@ const sparklineChart3 = new Chart(document.getElementById('sparkline-chart-3'), 
       }]
     }
   }
-})
+}); // eslint-disable-next-line no-unused-vars
 
-// eslint-disable-next-line no-unused-vars
-const sparklineChart4 = new Chart(document.getElementById('sparkline-chart-4'), {
+var sparklineChart4 = new Chart(document.getElementById('sparkline-chart-4'), {
   type: 'line',
   data: {
     labels: ['M', 'T', 'W', 'T', 'F', 'S', 'S'],
-    datasets: [
-      {
-        backgroundColor: 'transparent',
-        borderColor: coreui.Utils.getStyle('--info'),
-        borderWidth: 2,
-        data: [random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100)]
-      }
-    ]
+    datasets: [{
+      backgroundColor: 'transparent',
+      borderColor: coreui.Utils.getStyle('--info'),
+      borderWidth: 2,
+      data: [random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100)]
+    }]
   },
   options: {
     maintainAspectRatio: false,
@@ -334,21 +311,18 @@ const sparklineChart4 = new Chart(document.getElementById('sparkline-chart-4'), 
       }
     }
   }
-})
+}); // eslint-disable-next-line no-unused-vars
 
-// eslint-disable-next-line no-unused-vars
-const sparklineChart5 = new Chart(document.getElementById('sparkline-chart-5'), {
+var sparklineChart5 = new Chart(document.getElementById('sparkline-chart-5'), {
   type: 'line',
   data: {
     labels: ['M', 'T', 'W', 'T', 'F', 'S', 'S'],
-    datasets: [
-      {
-        backgroundColor: 'transparent',
-        borderColor: coreui.Utils.getStyle('--success'),
-        borderWidth: 2,
-        data: [random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100)]
-      }
-    ]
+    datasets: [{
+      backgroundColor: 'transparent',
+      borderColor: coreui.Utils.getStyle('--success'),
+      borderWidth: 2,
+      data: [random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100)]
+    }]
   },
   options: {
     maintainAspectRatio: false,
@@ -369,21 +343,18 @@ const sparklineChart5 = new Chart(document.getElementById('sparkline-chart-5'), 
       }
     }
   }
-})
+}); // eslint-disable-next-line no-unused-vars
 
-// eslint-disable-next-line no-unused-vars
-const sparklineChart6 = new Chart(document.getElementById('sparkline-chart-6'), {
+var sparklineChart6 = new Chart(document.getElementById('sparkline-chart-6'), {
   type: 'line',
   data: {
     labels: ['M', 'T', 'W', 'T', 'F', 'S', 'S'],
-    datasets: [
-      {
-        backgroundColor: 'transparent',
-        borderColor: coreui.Utils.getStyle('--danger'),
-        borderWidth: 2,
-        data: [random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100)]
-      }
-    ]
+    datasets: [{
+      backgroundColor: 'transparent',
+      borderColor: coreui.Utils.getStyle('--danger'),
+      borderWidth: 2,
+      data: [random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100)]
+    }]
   },
   options: {
     maintainAspectRatio: false,
@@ -404,10 +375,9 @@ const sparklineChart6 = new Chart(document.getElementById('sparkline-chart-6'), 
       }
     }
   }
-})
-
-const brandBoxChartLabels = ['January', 'February', 'March', 'April', 'May', 'June', 'July']
-const brandBoxChartOptions = {
+});
+var brandBoxChartLabels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
+var brandBoxChartOptions = {
   responsive: true,
   maintainAspectRatio: false,
   legend: {
@@ -415,10 +385,10 @@ const brandBoxChartOptions = {
   },
   scales: {
     xAxes: [{
-      display:false
+      display: false
     }],
     yAxes: [{
-      display:false
+      display: false
     }]
   },
   elements: {
@@ -429,10 +399,9 @@ const brandBoxChartOptions = {
       hoverBorderWidth: 3
     }
   }
-}
+}; // eslint-disable-next-line no-unused-vars
 
-// eslint-disable-next-line no-unused-vars
-const brandBoxChart1 = new Chart(document.getElementById('social-box-chart-1'), {
+var brandBoxChart1 = new Chart(document.getElementById('social-box-chart-1'), {
   type: 'line',
   data: {
     labels: brandBoxChartLabels,
@@ -445,10 +414,9 @@ const brandBoxChart1 = new Chart(document.getElementById('social-box-chart-1'), 
     }]
   },
   options: brandBoxChartOptions
-})
+}); // eslint-disable-next-line no-unused-vars
 
-// eslint-disable-next-line no-unused-vars
-const brandBoxChart2 = new Chart(document.getElementById('social-box-chart-2'), {
+var brandBoxChart2 = new Chart(document.getElementById('social-box-chart-2'), {
   type: 'line',
   data: {
     labels: brandBoxChartLabels,
@@ -461,10 +429,9 @@ const brandBoxChart2 = new Chart(document.getElementById('social-box-chart-2'), 
     }]
   },
   options: brandBoxChartOptions
-})
+}); // eslint-disable-next-line no-unused-vars
 
-// eslint-disable-next-line no-unused-vars
-const brandBoxChart3 = new Chart(document.getElementById('social-box-chart-3'), {
+var brandBoxChart3 = new Chart(document.getElementById('social-box-chart-3'), {
   type: 'line',
   data: {
     labels: brandBoxChartLabels,
@@ -477,4 +444,5 @@ const brandBoxChart3 = new Chart(document.getElementById('social-box-chart-3'), 
     }]
   },
   options: brandBoxChartOptions
-})
+});
+//# sourceMappingURL=widgets.js.map
